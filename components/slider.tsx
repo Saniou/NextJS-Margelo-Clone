@@ -3,9 +3,10 @@ import useAnimationFrame from "@/utils/use-animation-frame";
 import React, { useContext, useRef, useCallback } from "react";
 
 interface Props {
-    initialOffSetX: number
-    className: string
-    contentWidth: number
+    initialOffSetX: number;
+    className: string;
+    contentWidth: number;
+    children: React.ReactNode;
 }
 
 const SliderContainer: React.FC<Props> = ({ children, initialOffSetX, contentWidth, className}) => {
@@ -43,14 +44,16 @@ const SliderContainer: React.FC<Props> = ({ children, initialOffSetX, contentWid
 }
 
 interface ItemProps {
-    width: number,
-    
-}
+    width: number;
+    children: React.ReactNode;
+  }
 
 export const SliderItem: React.FC<ItemProps> = ({ children, width }) => {
-    <div className="inline-flex justify-center mx-4" style={{width}}>
+    return (
+    <div className="inline-flex justify-center mx-4" style={{ width }}>
         {children}
     </div>
+)
 }
 
 export default SliderContainer

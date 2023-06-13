@@ -1,7 +1,8 @@
 import React from 'react'
 
 interface Props {
-    by: string,
+    by: string;
+    children: React.ReactNode;
 }
 
 const Review: React.FC<Props> = ({children, by}) => {

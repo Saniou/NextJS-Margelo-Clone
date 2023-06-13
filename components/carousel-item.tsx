@@ -13,13 +13,13 @@ export const CarouselItem: React.FC<Props> = ({ children, index }) => {
     const isActive = selectedIndex === index
     
     const handleClick = useCallback(() => {
-        if (emblaApi === undefined) {
+        if (emblaApi !== undefined) {
             return emblaApi.scrollTo(index)
         }
     }, [emblaApi, index])
     
     return (
-        <div className={`${styles.slide} relative  ${isActive ? 'active' : ''}`}onClick={handleClick}>
+        <div className={`${styles.slide} relative  ${isActive ? 'active' : ''}`} onClick={handleClick}>
             {children}
         </div>
     )   

@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import SliderContainer from './slider'
-import SliderItem from './slider'
+import SliderContainer, { SliderItem } from './slider';
 
 const ClientLogos: React.FC = () => {
     return (
@@ -57,7 +56,7 @@ const ClientLogos: React.FC = () => {
             <SliderItem width={150}>
             <Image src='/assets/carousel/image (15).webp' className='ml-2' width={150} height={50} alt='ds'/>
             </SliderItem>
-            <SliderItem width={150} size=''>
+            <SliderItem width={150}>
             <Image src='/assets/carousel/image (11).webp' className='ml-2' width={150} height={50} alt='ds'/>
             </SliderItem>
             <SliderItem width={150}>

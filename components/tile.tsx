@@ -2,12 +2,13 @@ import { ScrollContext } from "@/utils/scroll-observer";
 import React, { useContext, useRef } from "react";
 
 interface WrapperProps {
-    numOfPages: number
+    numOfPages: number;
+    children: React.ReactNode
 }
 
 interface TileContextValue {
     numOfPages: number,
-    currentPage: number
+    currentPage: number;
 }
 
 export const TileContext = React.createContext<TileContextValue>({
@@ -44,13 +45,13 @@ export const TileWrapper: React.FC<WrapperProps> = ({children, numOfPages}) => {
     )
 };
 
-export const TileBackground: React.FC = ({ children }) => {
+export const TileBackground: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return(
         <div className="w-full h-full absolute">{children}</div>  
     )
 }
 
-export const TileContent: React.FC = ({ children }) => {
+export const TileContent:React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return(
         <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
     )    

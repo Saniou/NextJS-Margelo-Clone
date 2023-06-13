@@ -8,7 +8,11 @@ export const SizeContext = React.createContext<ScrollValue>({
     innerWidth: 0
 })
 
-const SizeObserver: React.FC = ({children}) => {
+interface ScrollObserverProps{
+    children: React.ReactNode;
+}
+
+const SizeObserver: React.FC<ScrollObserverProps> = ({children}) => {
     const [ innerWidth, setInnerWidth ] = useState(0)
     const handleResize = useCallback(() => {
         setInnerWidth(window.innerWidth)
