@@ -7,7 +7,7 @@ interface Props {
     children: JSX.Element
 }
 
-export const CarouselItem = React.FC<Props> = ({ children, index }) => {
+export const CarouselItem: React.FC<Props> = ({ children, index }) => {
     
     const { embla: emblaApi, selectedIndex } = useContext(CarouselContext)
     const isActive = selectedIndex === index
