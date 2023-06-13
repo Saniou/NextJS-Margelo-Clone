@@ -28,41 +28,53 @@ const AboutUs: React.FC = () => {
                 <div className='mt-2'>the &ldquo;spec-ops&ldquo;</div>
                 <div
                     className='mt-10 grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-20'>
-                    <Member id='marc' name='Marc' socialId='@mrousavy' link='https://github.com'/>
+                    <Member 
+                        id='marc' 
+                        name='Marc' 
+                        socialId='@mrousavy' 
+                        link='https://github.com'/>
                     <Member
-                        id='Szymon'
+                        id='szymon'
                         name='Szymon'
                         socialId='@szymon20000'
                         link='https://github.com'/>
                     <Member
-                        id='Thomas'
+                        id='thomas'
                         name='Thomas'
                         socialId='@thomas-coldwell'
                         link='https://github.com'/>
                     <Member
-                        id='Christoph'
+                        id='christoph'
                         name='Christoph'
                         socialId='@chrispader'
                         link='https://github.com'/>
                     <Member
-                        id='Hanno'
+                        id='hanno'
                         name='Hanno'
                         socialId='@janicduplessis'
                         link='https://github.com'/>
-                    <Member id='Janic' name='Janic' socialId='@perunt' link='https://github.com'/>
+                    <Member 
+                        id='janic' 
+                        name='Janic' 
+                        socialId='@perunt' 
+                        link='https://github.com'/>
                     <Member
-                        id='Taras'
+                        id='taras'
                         name='Taras'
                         socialId='@terrysahaidak'
                         link='https://github.com'/>
                     <Member
-                        id='Terry'
+                        id='terry'
                         name='Terry'
                         socialId='@ericvicenti'
                         link='https://github.com'/>
-                    <Member id='Eric' name='Eric' socialId='@Eric' link='https://github.com'/>
+                    <Member 
+                        id='eric' 
+                        name='Eric' 
+                        socialId='@Eric' 
+                        link='https://github.com'/>
                     <Member
-                        id='Viktoria'
+                        id='viktoria'
                         name='Viktoria'
                         socialId='@Viktoria'
                         link='https://github.com'/>
