@@ -45,7 +45,6 @@ const Works = () => {
                                             muted
                                             playsInline
                                             className="w-[90%] mt-20 rounded-[40px]">
-                                            <source src="/assets/header-bg.mp4" type="video/mp4; codecs=hvc1"/>
                                             <source src="/assets/coinbase-wallet.mp4" type="video/mp4; hvc1"/>
                                         </video>
                                     </WorkRight>
