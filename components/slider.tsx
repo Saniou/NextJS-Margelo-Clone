@@ -1,7 +1,7 @@
 import { SizeContext } from "@/utils/size-observer";
 import useAnimationFrame from "@/utils/use-animation-frame";
 import React, { useContext, useRef, useCallback, useEffect } from "react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
 interface Props {
   initialOffsetX?: number;
@@ -30,7 +30,6 @@ const SliderContainer: React.FC<Props> = ({
     refScrollX.current += 0.5;
     refContainer.current.scrollLeft = refScrollX.current;
 
-    // Reset position when scrolled halfway
     if (refScrollX.current >= refContent.current.scrollWidth / 2) {
       refScrollX.current = 0;
       refContainer.current.scrollLeft = 0;
@@ -73,7 +72,7 @@ const SliderContainer: React.FC<Props> = ({
             if (React.isValidElement(child)) {
               return React.cloneElement(child, {
                 key: `clone-${index}`,
-                style: { ...child.props.style, flexShrink: 0 }
+                ...(child.props.style ? { style: { ...child.props.style, flexShrink: 0 } } : {})
               });
             }
             return child;
@@ -88,23 +87,26 @@ interface ItemProps {
   width?: number;
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export const SliderItem: React.FC<ItemProps> = ({ 
   children, 
   width = 300,
-  className = ""
+  className = "",
+  style
 }) => {
   return (
     <div
       className={`inline-flex justify-center items-center mx-4 ${className}`}
       style={{ 
         width: `${width}px`,
-        flexShrink: 0
+        flexShrink: 0,
+        ...style
       }}
     >
       {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
+        if (React.isValidElement<ImageProps>(child) && child.type === Image) {
           return React.cloneElement(child, {
             style: {
               ...child.props.style,
@@ -113,7 +115,7 @@ export const SliderItem: React.FC<ItemProps> = ({
               maxWidth: '100%',
               objectFit: 'contain'
             }
-          });
+          } as Partial<ImageProps> & React.Attributes);
         }
         return child;
       })}
